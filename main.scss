@@ -1,12 +1,19 @@
 img{
 	height: 100px;
 	width: 100px;
-	position: absolute;
-	top:0em;
+	position: relative;
+	top:-4em;
 	left: 13em;
 }
 
 .repos{
 	list-style-type: none;
 	border: solid 1px #999;
+}
+
+.followers{
+	background-color: #999;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 5px;
 }

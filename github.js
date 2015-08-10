@@ -5,6 +5,11 @@ $.getJSON("https://api.github.com/users/LukeSettle", function(data){
 	$("<h1/>", {
 		text: data.name
 	}).appendTo("body");
+
+	$("<h3/>", {
+		text: "location:" + data.location
+	}).appendTo("body");
+	
 	$.getJSON(data.avatar_url)
 	$("<img>", {
 		src: data.avatar_url
@@ -14,6 +19,9 @@ $.getJSON("https://api.github.com/users/LukeSettle", function(data){
 var repoCallback = function(data){
 	console.log(data);
 	var listTag = $("<ol/>").addClass("repos");
+	$("<h3/>", {
+		text: "Reopsitories"
+	}).appendTo("body");
 	$.each(data, function(key, val){
 		$("<li/>", {
 			text: val.name
@@ -24,6 +32,9 @@ var repoCallback = function(data){
 
 var followersCallback = function(data){
 	var followersList = $("<ol/>");
+	$("<h3/>", {
+		text: "Followers"
+	}).appendTo("body");
 	$.each(data, function(key, val){
 		$("<li/>", {
 			text: val.login
